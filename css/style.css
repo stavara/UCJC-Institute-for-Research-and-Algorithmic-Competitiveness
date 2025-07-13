@@ -20,6 +20,7 @@ body {
 /* =========== MENU ============= */
 
 header {
+    position: relative;
     border-bottom: 1px solid #d9d9d9;
     background-color: rgb(150, 35, 74);
     width: 80%;
@@ -29,36 +30,96 @@ header {
     font-size: 18px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-}
 
-.container nav {
+/* ——— Menú desktop ——— */
+.nav-menu {
     display: flex;
-}
-
-.container ul {
-    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
-
-.container li {
-    display: flex;
-    list-style: none;
+.nav-menu li {
+    margin: 0;
 }
-
-.container a {
+.nav-menu a {
+    display: block;
     text-decoration: none;
     padding: 30px;
     color: white;
 }
-
-.container a:hover {
+.nav-menu a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+/* ——— Posicionamiento y hamburguesa ——— */
+.container nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.hamburger span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ——— Responsive ≤768px ——— */
+@media (max-width: 768px) {
+    /* Ocultamos el menú y mostramos el icono */
+    header {
+        padding: 10px;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: rgb(150, 35, 74);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    .nav-menu a {
+        padding: 15px;
+        text-align: center;
+        color: #fff;
+    }
+}
+
 
 /* =========== CARUSEL ============= */
 
@@ -383,7 +444,7 @@ footer a:hover {
 /* Móviles grandes (≤768px) */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;
+        font-size: 18px;
     }
     nav ul {
         flex-direction: column;
@@ -415,12 +476,12 @@ footer a:hover {
 @media (max-width: 480px) {
     header,
     #bigO {
-        width: 100%;
+        width: 95%;
         margin-bottom: 30px;
     }
 
     header {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .container li {
