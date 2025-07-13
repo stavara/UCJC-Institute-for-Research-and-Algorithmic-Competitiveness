@@ -470,6 +470,10 @@ footer a:hover {
     #news ul {
         gap: 12px;
     }
+
+    .more-info .markdown-container > h1:first-child {
+        margin-top: 0;
+    }
 }
 
 /* Móviles pequeños (≤480px) */
@@ -555,10 +559,6 @@ footer a:hover {
     margin: 1.5em 0 0.5em;
     font-weight: 600;
     line-height: 1.25;
-}
-
-.more-info .markdown-container > h1:first-child {
-    margin-top: 0;
 }
 
 .more-info .markdown-container h1 { font-size: 2rem; color: #000; }
