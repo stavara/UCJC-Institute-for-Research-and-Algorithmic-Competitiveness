@@ -123,10 +123,16 @@ ul {
     display: block;
     width: 100%;             /* hasta el final del contenedor */
     height: 5px;             /* grosor de la línea */
-    background-color: rgb(150, 35, 74);  /* color de la línea */
+    background-color: rgb(198, 57, 105);  /* color de la línea */
     position: absolute;
     bottom: 0;               /* en la base del h2 */
     left: 0;
+}
+
+/* =========== ENCABEZADOS ============= */
+
+.section > p {
+    font-size: 18px;
 }
 
 
@@ -216,4 +222,41 @@ ul {
     border-radius: 8px;
     cursor: pointer;
     z-index: 5;
+}
+
+
+footer {
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    margin-top: 100px;
+    background-color: #222;           /* Dark background */
+    color: #eee;                      /* Light text */
+    text-align: center;               /* Center content */
+    padding: 20px 0;                  /* Vertical spacing */
+    font-size: 0.9rem;                /* Slightly smaller text */
+    line-height: 1.4;                 /* Improve readability */
+}
+
+footer p {
+    margin: 5px 0;                    /* Space between paragraphs */
+}
+
+footer a {
+    color: #4ea3ff;                   /* Accent link color */
+    text-decoration: none;            /* Remove underline */
+    margin: 0 8px;                    /* Horizontal spacing */
+    transition: color 0.2s ease;      /* Smooth hover transition */
+}
+
+footer a:hover {
+    color: #81b9ff;                   /* Lighter on hover */
+    text-decoration: underline;       /* Underline on hover */
+}
+
+/* Responsive tweak: reduce padding on small screens */
+@media (max-width: 480px) {
+    footer {
+        padding: 15px 0;
+        font-size: 0.8rem;
+    }
 }
