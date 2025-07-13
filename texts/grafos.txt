@@ -1,0 +1,7 @@
+La teoría de grafos estudia las propiedades y aplicaciones de las estructuras formadas por vértices (nodos) y aristas (conexiones).
+Principales líneas de investigación:
+- Conectividad y caminos mínimos (algoritmo de Dijkstra, Bellman–Ford).
+- Coloración de grafos y problemas NP-completos.
+- Modelado de redes en biología, telecomunicaciones y sociología.
+- Grafos aleatorios y su comportamiento asintótico.
+- Algoritmos distribuidos y optimización en redes de gran escala.

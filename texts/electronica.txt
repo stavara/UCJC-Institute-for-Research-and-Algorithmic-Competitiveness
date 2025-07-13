@@ -1,0 +1,7 @@
+La electrónica combina componentes semiconductores y circuitos para diseñar dispositivos inteligentes.
+Temas de estudio:
+- Arquitectura y programación de microcontroladores (ARM, AVR).
+- Sensores y actuadores: adquisición de datos y control en tiempo real.
+- Comunicaciones inalámbricas: Bluetooth, ZigBee, LoRa.
+- Diseño de placas de circuito impreso (PCB) y optimización de consumo.
+- Internet de las Cosas (IoT) y sistemas distribuidos.

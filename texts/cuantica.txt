@@ -1,0 +1,7 @@
+La computación cuántica explora sistemas que utilizan principios de la mecánica cuántica para procesar información.
+Aspectos clave:
+- Qubits, superposición y entrelazamiento.
+- Puertas cuánticas básicas: Hadamard, CNOT, Pauli-X/Y/Z.
+- Algoritmos cuánticos: Shor (factoreo) y Grover (búsqueda).
+- Errores cuánticos y corrección de errores.
+- Hardware emergente: trampas de iones, superconductores y fotónica.

@@ -47,7 +47,6 @@ ul {
 .container li {
     display: flex;
     list-style: none;
-    margin-right: 30px;
 }
 
 .container a {
@@ -65,7 +64,7 @@ ul {
 
 .hero .carusel h1 {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 24px;
@@ -123,15 +122,14 @@ ul {
 .section h2 {
     position: relative;
     padding-bottom: 0.5em; /* deja espacio para la línea */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-transform: uppercase;
-    color: rgb(150, 35, 74);
 }
 
 .section h2::after {
     content: "";
     display: block;
-    width: 0%;             /* hasta el final del contenedor */
+    width: 100%;             /* hasta el final del contenedor */
     height: 5px;             /* grosor de la línea */
     background-color: rgb(198, 57, 105);  /* color de la línea */
     position: absolute;
@@ -228,6 +226,25 @@ ul {
     z-index: 5;
 }
 
+.more-info {
+    max-height: 0;               /* colapsado */
+    overflow: hidden;            /* oculta el contenido colapsado */
+    opacity: 0;                  /* opcional: para fundido */
+    transition:
+            max-height 0.3s ease,      /* animación de altura */
+            opacity 0.25s ease;         /* animación de opacidad */
+}
+
+.more-info.active {
+    max-height: 500px;           /* suficiente para tu contenido */
+    opacity: 1;
+}
+
+.more-info {
+    flex-direction: column;
+    font-size: 18px;
+}
+
 /* ===== Últimas Noticias ===== */
 #news {
     padding: 40px 0;
@@ -235,7 +252,6 @@ ul {
 
 #news h2 {
     margin-bottom: 24px;
-    color: rgb(150, 35, 74); /* color rojo de la página */
 }
 
 /* lista en una sola columna */
@@ -296,6 +312,22 @@ ul {
             0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Contenedor responsivo de vídeo 16:9 */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 
 footer {
@@ -325,8 +357,104 @@ footer a:hover {
     text-decoration: underline;       /* Underline on hover */
 }
 
-/* Responsive tweak: reduce padding on small screens */
+/* === Media Queries para responsive === */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+    header,
+    #bigO {
+        width: 90%;
+    }
+    .cards {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .card {
+        width: 100%;
+    }
+    .container li {
+        margin-right: 20px;
+    }
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Móviles grandes (≤768px) */
+@media (max-width: 768px) {
+    header {
+        font-size: 16px;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .container li {
+        margin: 0 0 15px 0;
+    }
+    .container a {
+        padding: 20px;
+        text-align: center;
+    }
+    .hero .carusel h1 {
+        font-size: 24px;
+        padding: 8px 16px;
+    }
+    .cards {
+        gap: 20px;
+    }
+    .ratio-16-9 .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    #news ul {
+        gap: 12px;
+    }
+}
+
+/* Móviles pequeños (≤480px) */
 @media (max-width: 480px) {
+    header,
+    #bigO {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    header {
+        font-size: 14px;
+    }
+    .container li {
+        margin: 0 0 10px 0;
+    }
+    .container a {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .hero .carusel h1 {
+        font-size: 20px;
+    }
+    .cards {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    .ratio-16-9 {
+        border-radius: 16px;
+    }
+    .ratio-16-9 .card-content h3 {
+        font-size: 1.25rem;
+    }
+    .ratio-16-9 .card-content p {
+        font-size: 0.9rem;
+    }
+    .ratio-16-9 .btn {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    #news a {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
     footer {
         padding: 15px 0;
         font-size: 0.8rem;
