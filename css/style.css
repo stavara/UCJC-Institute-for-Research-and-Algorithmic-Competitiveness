@@ -26,6 +26,7 @@ header {
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
     margin-bottom: 50px;
+    font-size: 18px;
 }
 
 .container {
@@ -112,6 +113,21 @@ ul {
     z-index: 1;            /* asegura que el degradado quede encima */
 }
 
+.section h2 {
+    position: relative;
+    padding-bottom: 0.5em; /* deja espacio para la línea */
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    width: 100%;             /* hasta el final del contenedor */
+    height: 5px;             /* grosor de la línea */
+    background-color: rgb(150, 35, 74);  /* color de la línea */
+    position: absolute;
+    bottom: 0;               /* en la base del h2 */
+    left: 0;
+}
 
 
 /* =========== ARTICULOS ============= */
@@ -134,9 +150,7 @@ ul {
     display: flex;
     flex-direction: column;
     width: 30%;
-    border-radius: 24px;
     overflow: hidden;
-    padding: 15px 15px 30px 15px;
 }
 
 .ratio-16-9 {
@@ -144,7 +158,7 @@ ul {
     aspect-ratio: 1.34;
     overflow: hidden;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow:
             0 2px 4px -1px rgba(0,0,0,0.2),
             0 4px 5px 0 rgba(0,0,0,0.14),
