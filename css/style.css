@@ -188,7 +188,7 @@ ul {
     left: 24px;
     z-index: 2;
     color: #fff;
-    max-width: 65%;           /* o el ancho que necesites */
+    max-width: 60%;           /* o el ancho que necesites */
     padding: 14px 14px 0 0;
     border-radius: 8px;
 }
