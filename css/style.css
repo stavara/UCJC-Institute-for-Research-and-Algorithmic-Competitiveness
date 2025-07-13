@@ -34,11 +34,11 @@ header {
     flex-direction: column;
 }
 
-nav {
+.container nav {
     display: flex;
 }
 
-ul {
+.container ul {
     display: flex;
     margin: 0;
     padding: 0;
@@ -480,7 +480,7 @@ footer a:hover {
     font-family: "Open Sans", sans-serif;
     color: #333;
     line-height: 1.6;
-    font-size: 1rem;
+    font-size: 18px;
     padding: 0;
     margin: 0;
 }
@@ -495,12 +495,12 @@ footer a:hover {
     font-weight: 600;
     line-height: 1.25;
 }
-.more-info .markdown-container h1 { font-size: 2rem; color: #c63969; }
-.more-info .markdown-container h2 { font-size: 1.75rem; color: #96254a; }
-.more-info .markdown-container h3 { font-size: 1.5rem; color: #96254a; }
-.more-info .markdown-container h4 { font-size: 1.25rem; color: #96254a; }
-.more-info .markdown-container h5 { font-size: 1.1rem; color: #96254a; }
-.more-info .markdown-container h6 { font-size: 1rem; color: #96254a; }
+.more-info .markdown-container h1 { font-size: 2rem; color: #000; }
+.more-info .markdown-container h2 { font-size: 1.75rem; color: #000; }
+.more-info .markdown-container h3 { font-size: 1.5rem; color: #000; }
+.more-info .markdown-container h4 { font-size: 1.25rem; color: #000; }
+.more-info .markdown-container h5 { font-size: 1.1rem; color: #000; }
+.more-info .markdown-container h6 { font-size: 1rem; color: #000; }
 /* PÃ¡rrafos */
 .more-info .markdown-container p {
     margin: 0.75em 0;

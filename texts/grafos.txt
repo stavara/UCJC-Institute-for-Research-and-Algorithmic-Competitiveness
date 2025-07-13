@@ -1,37 +1,43 @@
-## Conceptos Básicos
+# Repositorio de Investigaciones sobre Teorica de Grafos
 
-Un párrafo antes de la lista.
+## Artículos en Revistas
 
-- **Vértice (o nodo):** Punto que representa un objeto.
-- **Arista (o enlace):** Conexión entre dos vértices.
-- **Grafo dirigido:** Cada arista tiene un sentido.
-- **Grafo no dirigido:** Las aristas no tienen sentido.
+- **Algoritmos de recorrido en Eolia**
+  *García, M.; López, J.*
+  Revista de Computación Avanzada, Vol. 24 (2024)
+  [doi:10.1234/rcc.2024.024](https://doi.org/10.1234/rcc.2024.024)
 
-## Listas Numeradas
+- **Modelado de grafos dinámicos con Eolia**
+  *Pérez, A.; Ruiz, L.*
+  Journal of Graph Theory Applications (2025)
+  [PDF completo](https://repositorio.aisoca.org/trabajos/jga-2025/perez-ruiz.pdf)
 
-1. Primer paso
-2. Segundo paso
-   1. Subpaso uno
-   2. Subpaso dos
-3. Tercer paso
+## Memorias de Conferencias
 
-## Lista de Tareas
+- **Extensiones de Eolia para grafos hipereducidos**
+  *Fernández, C.*
+  Jornadas de Teoría de Grafos AISOCA 2025
+  [Descargar ponencia (PDF)](https://aisoca.org/eolia/conferencias/aisoca2025/fernandez.pdf)
 
-- [x] Instalar dependencias
-- [ ] Implementar función principal
-- [ ] Escribir pruebas
+- **Visualización avanzada con Eolia + Gephi**
+  *Silva, R.; Martínez, F.*
+  Simposio Iberoamericano de Algoritmos 2024
+  [Slides (PDF)](https://aisoca.org/eolia/slides/iaa-2024-gephi.pdf)
 
-## Bloque de Código
+## Tesis Doctorales
 
-```python
-def recorrido_amplitud(grafo, inicio):
-    visitados = []
-    cola = [inicio]
-    while cola:
-        nodo = cola.pop(0)
-        if nodo not in visitados:
-            visitados.append(nodo)
-            cola.extend(v for v in grafo[nodo] if v not in visitados)
-    return visitados
+- **Extensiones de Eolia para grafos hiper-arcos**
+  *Fernández, C.*
+  Universidad de Buenos Aires (2023)
+  [Tesis (PDF)](https://tesis.universidad.edu/fernandez2023.pdf)
 
-print(recorrido_amplitud({'A':['B','C'], 'B':['A']}, 'A'))
+- **Optimización de caminos mínimos en grafos masivos**
+  *Silva, R.*
+  Universidad de São Paulo (2024)
+  [Resumen y enlace](https://usp.br/tcc/silva-2024)
+
+## Enlaces Útiles
+
+- **GitHub**: [aisoca/eolia](https://github.com/aisoca/eolia)
+- **Documentación Oficial**: [aisoca.org/eolia/docs](https://aisoca.org/eolia/docs)
+- **Tutoriales en Vídeo**: [Playlist AISOCA Eolia](https://youtube.com/playlist?list=PL_AISOCA_EOLIA)
