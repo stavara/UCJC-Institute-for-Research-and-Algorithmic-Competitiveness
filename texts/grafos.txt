@@ -1,7 +1,37 @@
-La teoría de grafos estudia las propiedades y aplicaciones de las estructuras formadas por vértices (nodos) y aristas (conexiones).
-Principales líneas de investigación:
-- Conectividad y caminos mínimos (algoritmo de Dijkstra, Bellman–Ford).
-- Coloración de grafos y problemas NP-completos.
-- Modelado de redes en biología, telecomunicaciones y sociología.
-- Grafos aleatorios y su comportamiento asintótico.
-- Algoritmos distribuidos y optimización en redes de gran escala.
+## Conceptos Básicos
+
+Un párrafo antes de la lista.
+
+- **Vértice (o nodo):** Punto que representa un objeto.
+- **Arista (o enlace):** Conexión entre dos vértices.
+- **Grafo dirigido:** Cada arista tiene un sentido.
+- **Grafo no dirigido:** Las aristas no tienen sentido.
+
+## Listas Numeradas
+
+1. Primer paso
+2. Segundo paso
+   1. Subpaso uno
+   2. Subpaso dos
+3. Tercer paso
+
+## Lista de Tareas
+
+- [x] Instalar dependencias
+- [ ] Implementar función principal
+- [ ] Escribir pruebas
+
+## Bloque de Código
+
+```python
+def recorrido_amplitud(grafo, inicio):
+    visitados = []
+    cola = [inicio]
+    while cola:
+        nodo = cola.pop(0)
+        if nodo not in visitados:
+            visitados.append(nodo)
+            cola.extend(v for v in grafo[nodo] if v not in visitados)
+    return visitados
+
+print(recorrido_amplitud({'A':['B','C'], 'B':['A']}, 'A'))

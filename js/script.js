@@ -1,47 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const globalInfo = document.getElementById('more-info');
-    const cards = Array.from(document.querySelectorAll('#research .card'));
-    const textFiles = [
+    const globalInfo   = document.getElementById('more-info');
+    const cards        = Array.from(document.querySelectorAll('#research .card'));
+    const textFiles    = [
         'texts/grafos.txt',
         'texts/cuantica.txt',
         'texts/electronica.txt'
     ];
-    let currentIdx = null;
+    let currentIdx     = null;
+    const isMobile     = () => window.innerWidth <= 768;
 
-    const isMobile = () => window.innerWidth <= 768;
+    // 1) Referencia al h1 principal y almacena su texto original
+    const mainTitle       = document.querySelector('.hero h1');
+    const originalTitle   = mainTitle.textContent;
 
     document.querySelectorAll('#research .card .btn').forEach(button => {
         button.addEventListener('click', () => {
             const card = button.closest('.card');
-            const idx = cards.indexOf(card);
+            const idx  = cards.indexOf(card);
             if (idx < 0) return;
 
-            // Si clicas de nuevo en la misma, ciérralo
+            // 2) Si ya está activo y es la misma tarjeta, ciérralo y restaura título
             if (globalInfo.classList.contains('active') && currentIdx === idx) {
                 globalInfo.classList.remove('active');
+                mainTitle.textContent = originalTitle;
                 currentIdx = null;
                 return;
             }
-
-            // Cierra cualquier otro abierto
             globalInfo.classList.remove('active');
 
-            // Carga el .txt correspondiente
+            // Extrae título de la tarjeta
+            const cardTitle = card.querySelector('.card-content h3').textContent;
+            // 3) Asigna ese título al h1 principal
+            mainTitle.textContent = cardTitle;
+
             fetch(textFiles[idx])
                 .then(res => {
                     if (!res.ok) throw new Error('Error cargando texto');
                     return res.text();
                 })
                 .then(text => {
-                    const heading = card.querySelector('.card-content h3')?.textContent || '';
-                    globalInfo.querySelector('h4').textContent = heading;
-                    globalInfo.querySelector('p').textContent  = text;
+                    // Pon el título en el detalle también
+                    const headingEl = globalInfo.querySelector('h4');
+                    if (headingEl) {
+                        headingEl.textContent = cardTitle;
+                    }
 
-                    // En móvil, lo insertamos justo después de la tarjeta
+                    // Convierte Markdown a HTML
+                    const mdContainer = globalInfo.querySelector('.markdown-container');
+                    if (mdContainer) {
+                        mdContainer.innerHTML = marked.parse(text);
+                    }
+
+                    // Inserta en móvil justo tras la card, en desktop al final
                     if (isMobile()) {
                         card.insertAdjacentElement('afterend', globalInfo);
                     } else {
-                        // En desktop, lo dejamos bajo todo (#research)
                         document.querySelector('#research').appendChild(globalInfo);
                     }
 
@@ -50,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch(err => {
                     console.error(err);
-                    globalInfo.querySelector('h4').textContent = 'Error';
-                    globalInfo.querySelector('p').textContent  = 'No se pudo cargar la información.';
+                    const mdContainer = globalInfo.querySelector('.markdown-container');
+                    if (mdContainer) mdContainer.textContent = 'No se pudo cargar la información.';
                     if (isMobile()) {
                         card.insertAdjacentElement('afterend', globalInfo);
                     } else {
@@ -63,10 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Recoloca o cierra al cambiar tamaño de ventana
     window.addEventListener('resize', () => {
         if (!isMobile() && currentIdx !== null) {
-            // Si pasamos a desktop y hay algo abierto, reubica al final
             document.querySelector('#research').appendChild(globalInfo);
         }
     });

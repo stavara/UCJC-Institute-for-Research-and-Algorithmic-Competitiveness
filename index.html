@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituo de Investigacion y competividad algoritmica</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instituto de Investigación y Competitividad Algorítmica</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- marked.js para Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -27,6 +29,7 @@
         </nav>
     </div>
 </header>
+
 <div id="bigO">
     <section class="hero">
         <div class="carusel">
@@ -48,16 +51,7 @@
             <h2>Acerca del Instituto</h2>
             <p>
                 El UCJC – Institute for Research and Algorithmic Competitiveness (IRAC)
-                trabaja en la vanguardia de la investigación algorítmica para resolver
-                retos complejos que demandan eficiencia, escalabilidad y robustez. Sus
-                líneas de trabajo incluyen el desarrollo de nuevos métodos de optimización
-                y aproximación para grandes volúmenes de datos, la investigación en algoritmos
-                distribuidos de bajo consumo energético y la creación de arquitecturas híbridas
-                que combinan modelos simbólicos y de aprendizaje profundo. Gracias a sus
-                laboratorios interconectados, el instituto favorece la colaboración entre
-                disciplinas, promoviendo que un algoritmo diseñado en un área, como logística
-                urbana, pueda adaptarse a campos tan variados como la simulación aeroespacial
-                o la coordinación de enjambres robóticos.
+                trabaja en la vanguardia de la investigación algorítmica...
             </p>
         </section>
 
@@ -69,7 +63,7 @@
                         <img src="pic/castillo.png" alt="Descripción de la imagen">
                         <button class="btn">Descubrir</button>
                         <div class="card-content">
-                            <h3>Teoria de Grafos</h3>
+                            <h3>Teoría de Grafos</h3>
                             <p>Investigaciones sobre las leyes fundamentales del universo.</p>
                         </div>
                     </div>
@@ -79,7 +73,7 @@
                         <img src="pic/card-pic-vaca.png" alt="Descripción de la imagen">
                         <button class="btn">Descubrir</button>
                         <div class="card-content">
-                            <h3>Computacion Cuantica</h3>
+                            <h3>Computación Cuántica</h3>
                             <p>Estudios avanzados en estructuras matemáticas.</p>
                         </div>
                     </div>
@@ -89,15 +83,19 @@
                         <img src="pic/barco.png" alt="Descripción de la imagen">
                         <button class="btn">Descubrir</button>
                         <div class="card-content">
-                            <h3>Electronica</h3>
+                            <h3>Electrónica</h3>
                             <p>Análisis crítico de la historia, filosofía y cultura.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Contenedor de detalle (Markdown) -->
             <div id="more-info" class="more-info">
-                <h4>Información Adicional</h4>
-                <p>Aquí puedes poner más detalles, enlaces, vídeos, etc.</p>
+                <h4>Título</h4>
+                <div class="markdown-container">
+
+                </div>
             </div>
         </section>
 
@@ -106,19 +104,12 @@
             <ul>
                 <li><a href="#">Premio Nobel de Física otorgado a investigador visitante</a></li>
                 <li><a href="#">Nueva subvención para proyecto interdisciplinario</a></li>
-                <li><a href="#">Conferencia anual de humanidades: Registro abierto</a></li>
-                <li><a href="#">Premio Nobel de Física otorgado a investigador visitante</a></li>
-                <li><a href="#">Nueva subvención para proyecto interdisciplinario</a></li>
-                <li><a href="#">Conferencia anual de humanidades: Registro abierto</a></li>
-                <li><a href="#">Premio Nobel de Física otorgado a investigador visitante</a></li>
-                <li><a href="#">Nueva subvención para proyecto interdisciplinario</a></li>
-                <li><a href="#">Conferencia anual de humanidades: Registro abierto</a></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Instituo de Investigacion y competividad algoritmica.</p>
+        <p>&copy; 2025 Instituto de Investigación y Competitividad Algorítmica.</p>
         <p><a href="#contact">Política de Privacidad</a> | <a href="#contact">Términos de Uso</a></p>
     </footer>
 </div>
