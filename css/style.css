@@ -556,6 +556,11 @@ footer a:hover {
     font-weight: 600;
     line-height: 1.25;
 }
+
+.more-info .markdown-container > h1:first-child {
+    margin-top: 0;
+}
+
 .more-info .markdown-container h1 { font-size: 2rem; color: #000; }
 .more-info .markdown-container h2 { font-size: 1.75rem; color: #000; }
 .more-info .markdown-container h3 { font-size: 1.5rem; color: #000; }
