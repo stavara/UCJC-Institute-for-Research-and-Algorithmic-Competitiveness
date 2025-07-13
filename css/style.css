@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+/* =========== MENU ============= */
+
+.container {
+    display: flex;
+}
+
+
+
+
+/* =========== ARTICULOS ============= */
+
+.section{
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+}
