@@ -17,6 +17,10 @@ body {
     width: 80%;
 }
 
+.section {
+    margin: 50px 0;
+}
+
 /* =========== MENU ============= */
 
 header {
@@ -86,7 +90,7 @@ header {
 }
 
 /* ——— Responsive ≤768px ——— */
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
     /* Ocultamos el menú y mostramos el icono */
     header {
         padding: 10px;
