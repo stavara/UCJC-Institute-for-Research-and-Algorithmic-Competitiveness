@@ -15,6 +15,7 @@
     grid-template-columns: repeat(2,3fr);
     margin-inline: 3rem;
     padding-block: 5rem;
+    border-radius: 50%;
 }
 .card__description{
     color: rgb(150, 35, 74);
@@ -34,48 +35,34 @@
 .card__data {
     background-color: white;
     padding: 1.5rem;
-    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
     border-radius: 1rem;
     text-align: center;
     width: 320px;
     margin: auto;
+    height: 400px;
 }
-
 .card__image {
-    width: 100%;
+    width: 200px;
+    height: 200px;
     max-width: 300px;
     box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.50);
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-}
-
-.arrow {
-    cursor: pointer;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    margin: 0 auto;
+    justify-content: center; /* Centrar la imagen horizontalmente */
+    align-items: center; /* Centrar la imagen verticalmente */
+    -webkit-filter: grayscale(100%);
 }
-
-.arrow img {
-    transition: transform 0.3s ease;
-    margin-top: 25px;
-}
-
-/* Rotar flecha cuando el details esté abierto */
-.card__arrow[open] .arrow img {
-    transform: rotate(180deg);
-}
-
 .card__info {
     margin-top: 1rem;
-    animation: fadeIn 0.5s ease-in-out;
+}
+.card__description{
+    font-weight: bold;
+}
+.card__text p{
+    font-weight:bold;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 /* Services */
 /* Dispositivo pequeños */
 @media screen and (max-width: 340px){
