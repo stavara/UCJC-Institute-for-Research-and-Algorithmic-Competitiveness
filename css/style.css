@@ -1,85 +1,176 @@
+@font-face {
+    font-family: "Icono";
+    src: url("../fonts/icono.ttf") format("truetype");
+}
+span{
+    font-family: 'Icono';
+}
 * {
     box-sizing: border-box;
 }
 
 /* =========== MENU ============= */
-:root{
-    --container-color: white;
-    --small-font-size: ;
-    --h2-font-size: ;
-    --title-color: rgb(150, 35, 74);
-}
 .card__container {
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(2,3fr);
-    margin-inline: 3rem;
-    padding-block: 5rem;
-    border-radius: 50%;
-}
-.card__description{
-    color: rgb(150, 35, 74);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgb(150, 35, 74);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position:relative;
 }
 
-.card__container {
+.card__data-horizontal {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: 50px;
 }
-.card__article{
+
+.map-container,
+.info-container,
+.form-container {
+    flex: 1;
+}
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    min-height: 350px;
+    border-radius: 8px;
+}
+.card2{
+    color:white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
     position: relative;
-    /* overflow: hidden; */
+    font-size: 20px;
 }
-.card__data {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
+.info-container {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
     text-align: center;
-    width: 320px;
-    margin: auto;
-    height: 400px;
 }
-.card__image {
-    width: 200px;
-    height: 200px;
-    max-width: 300px;
-    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.50);
-    border-radius: 50%;
+.info-container h2 {
+    margin-bottom: 10px;
+}
+
+.social-icons {
     display: flex;
-    margin: 0 auto;
-    justify-content: center; /* Centrar la imagen horizontalmente */
-    align-items: center; /* Centrar la imagen verticalmente */
-    -webkit-filter: grayscale(100%);
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
-.card__info {
-    margin-top: 1rem;
+.URL_insta{
+    color:white;
+    font-size: 24px;
+    text-decoration: none;
 }
-.card__description{
-    font-weight: bold;
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
 }
-.card__text p{
-    font-weight:bold;
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contact-form button {
+    background: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #555;
+}
+.logo{
+    font-size: 21px;
+}
+
+@media (max-width: 1024px) {
+    .card__data-horizontal {
+        flex-direction: column;
+    }
 }
 
 /* Services */
+
 /* Dispositivo pequeños */
-@media screen and (max-width: 340px){
-    .container{
-        margin-inline: 1rem;
+@media (max-width: 768px) {
+    .card__data-horizontal {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
     }
-    .card__data{
-        width: 250px;
-        padding: 1rem;
+
+    .map-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .card2 {
+        position: static;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .info-container {
+        position: static;
+        transform: none;
+        padding: 20px;
+        text-align: center;
     }
 }
 /* Medium devices*/
-@media screen and (min-width:768px){
-    .card__container{
-        grid-template-columns:repeat(3,1fr);
-        column-gap:1rem;
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card__data-horizontal {
+        flex-direction: row;
+        align-items: center;
+    }
 
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .info-container {
+        position: relative;
+        transform: none;
+        top: auto;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .card2 {
+        min-height: 350px;
     }
 }
 /* Larges devices*/
